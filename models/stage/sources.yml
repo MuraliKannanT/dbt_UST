@@ -4,4 +4,19 @@ sources:
     schema: mk_mall
     tables:
       - name: regions
-      - name: nations
+        columns: 
+          - name: r_regionkey
+            data_tests:
+              - unique
+        description: Raw data of region table 
+      - name: suppliers
+        description: Raw data of supplier table 
+        config:
+          freshness:
+            warn_after: {count: 1, period: day}
+            error_after: {count: 3, period: day}
+          loaded_at_field: updated_time  
+      - name: customers
+      - name: orders
+      - name: lineitems
+

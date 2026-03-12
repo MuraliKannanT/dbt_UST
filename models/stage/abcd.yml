@@ -1,0 +1,10 @@
+sources:
+  - name: src01
+    database: sourcedb
+    schema: mk_mall
+    tables:
+      - name: nations
+        config:
+          freshness:
+            warn_after: {count: 1, period: day}
+            error_after: {count: 3, period: day}

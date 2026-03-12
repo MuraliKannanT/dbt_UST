@@ -1,0 +1,39 @@
+models:
+  - name: stg_nations
+    description: Table for storing information about the nations
+    columns:
+      - name: nation_id
+        description: "{{ doc('primary') }}"
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        description: Name field for Nations table
+      - name: region_id
+        description: Foreign key for regions table
+        data_tests:
+          - relationships:
+              arguments: 
+                to: ref('stg_regions')
+                field: region_id
+              config:
+                store_failures: true 
+  - name: stg_regions
+    columns:
+      - name: region_id
+        description: "{{ doc('primary') }}"
+        data_tests:
+          - unique:
+              description: "{{ doc('tests') }}"
+              config:
+                store_failures: true
+          - not_null
+      - name: name
+        description: Name field for Regions table
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['AFRICA','AMERICA','ASIA','EUROPE','MIDDLE EAST']
+
+
