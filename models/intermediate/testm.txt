@@ -1,0 +1,2 @@
+{{ loaddata ('mkmotors_dev.staging.s3dealers','mkmotors_dev.staging.stg_dealership',
+'mkmotors_dev.staging.ff_csv_nohdr_dq') }}

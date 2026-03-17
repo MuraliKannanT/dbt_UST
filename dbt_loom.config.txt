@@ -1,0 +1,7 @@
+manifests:
+  - name: prj_sub # This should match the project's real name
+    type: file
+    config:
+      # A path to your manifest. This can be either a local path, or a remote
+      # path accessible via http(s).
+      path: D:\Cloud\dbt\Projects\prj_sub\target\manifest.json

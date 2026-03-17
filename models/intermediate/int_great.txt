@@ -1,0 +1,35 @@
+version: 2
+
+models:
+
+  - name: stg_orders
+
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+        arguemnts:
+          min_value: 100
+
+    columns:
+
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: order_total_price_inr
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+            arguments:
+              min_value: 0
+              max_value: 1000000
+      - name: order_status_code
+        tests:
+          - dbt_expectations.expect_column_values_to_be_in_set:
+            arguments:
+              value_set: ['F', 'O', 'P']
+
+      - name: order_date
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+            arguments:
+              min_value: "1992-01-01"

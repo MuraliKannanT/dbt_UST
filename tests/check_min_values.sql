@@ -13,5 +13,5 @@ with orders as (
 select order_id, sum(total_price) ordertotal 
 from orders 
 group by 1
-having (ordertotal<=1000)
+having (ordertotal<=800)
 

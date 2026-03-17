@@ -9,6 +9,10 @@ models:
           - not_null
       - name: name
         description: Name field for Nations table
+        tests:
+          - dbt_utils.not_accepted_values:
+              arguments:
+                values: ['ISRAEL', 'IRAN2']        
       - name: region_id
         description: Foreign key for regions table
         data_tests:

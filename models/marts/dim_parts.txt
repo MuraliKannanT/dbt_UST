@@ -1,0 +1,1 @@
+select * from {{ ref('stg_parts') }} where part_id between 120001 and 120010
