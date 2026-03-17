@@ -1,0 +1,13 @@
+prj_mkmall:
+  outputs:
+    dev:
+      account: GQB82180
+      database: Analytics
+      password: Sachin@10
+      role: AnalyticsEngineer
+      schema: staging
+      threads: 3
+      type: snowflake
+      user: Sachin
+      warehouse: TRANSFORM_WH
+  target: dev
