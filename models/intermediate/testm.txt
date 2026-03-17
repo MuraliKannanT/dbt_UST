@@ -1,2 +1,3 @@
 {{ loaddata ('mkmotors_dev.staging.s3dealers','mkmotors_dev.staging.stg_dealership',
 'mkmotors_dev.staging.ff_csv_nohdr_dq') }}
+{# This is a demo for run-operation command to run macros independently #}
