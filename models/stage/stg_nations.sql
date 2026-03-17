@@ -1,5 +1,5 @@
 {{ config(query_tag = 'nations', tags = 'One',access = 'private',group='sales' ) }}
-select {{ dbt_utils.generate_surrogate_key(['n_nationkey']) }} nation_surrogate_key,
+select n_nationkey nation_surrogate_key,
         n_nationkey nation_id,
        n_regionkey region_id,
        n_name name,
